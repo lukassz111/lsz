@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./dist/lsz.umd.js"></script>
+    <style>
+        .demo {
+            border-radius: 0.56rem;
+            padding: 0.2rem;
+            margin: 1rem;
+            border-width: 1pt;
+            border-style: dotted;
+            border-color: gray;
+        }
+    </style>
+</head>
+<!-- Usage of class lsz-css-scroll -->
+<body class="lsz-css-scroll lsz-window-resized">
+    <p>This is a demo page for Lukassz111 Basic Addon. You should open browser insprector to see the effects</p>
+    <hr/>
+    <!-- Usage of class lsz-css-scroll -->
+    <style>
+        .demo-scroll > .lsz-css-scroll {
+            scrollbar-width: thin;
+            scrollbar-color: blue orange;
+            background-color: aqua;
+            color: black
+        }
+    </style>
+    <div class="demo demo-scroll">
+        <!-- Scrollable div with custom scrollbar styles -->
+        <!-- Usage of class lsz-css-scroll -->
+        <div class="lsz-css-scroll" style="width: 300px;;height: 300px; overflow: auto;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+            <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
+        </div>
+    </div>
+
+
+    <style>
+        .demo-conditional-class > .true {
+            border-color: green;
+            background-color: lightgreen;
+        }
+        .demo-conditional-class > .should-true,
+        .demo-conditional-class > .should-false {
+            padding: 0.5rem;
+            margin: 0.5rem;
+            border-radius: 0.56rem;
+            border-width: 1pt;
+            border-style: solid;
+        }
+        .demo-conditional-class > .should-true {
+            border-color: red;
+        }
+        .demo-conditional-class > .should-false {
+            border-color: greenyellow;
+        }
+
+        .demo-conditional-class > .should-true.true {
+            border-color: greenyellow
+        }
+        .demo-conditional-class > .should-false.true {
+            border-color: red;
+        }
+
+    </style>
+    <div class="demo demo-conditional-class">
+        <p>
+            This div demonstrates conditional class addition / removal
+            When condition is met the element get class <code>true</code> added
+            <code><pre>
+
+                .true {
+                    border-color: green;
+                    background-color: lightgreen;
+                }
+            </pre></code>
+        </p>
+        <div class="sub-demo-1-true should-true" data-lsz-conditional-class='[{ "class": "true", "condition": "isParentOf(p)"} ]'>
+            <p>
+                [{ "class": "true", "condition": "isParentOf(p)"} ]
+            </p>
+        </div>
+        <div class="sub-demo-1-false-0 should-false" data-lsz-conditional-class='[{ "class": "true", "condition": "isParentOf(p)" }]'>
+            <span>
+                [{ "class": "true", "condition": "isParentOf(p)"} ]
+            </span>
+        </div>
+        <div class="sub-demo-1-false-1 should-false" data-lsz-conditional-class='[{ "class": "true", "condition": "isParentOf(p)" }]'>
+            <span>
+                <p>[{ "class": "true", "condition": "isParentOf(p)"} ]</p>
+            </span>
+        </div>
+        <hr/>
+        <div class="sub-demo-2-true should-true" data-lsz-conditional-class='[{ "class": "true", "condition": "isAncestorOf(p)"} ]'>
+            <div>
+                <p>
+                    [{ "class": "true", "condition": "isAncestorOf(p)"} ]
+                </p>
+            </div>
+        </div>
+        <div class="sub-demo-2-false should-false" data-lsz-conditional-class='[{ "class": "true", "condition": "isAncestorOf(p)" }]'>
+            <div>
+                <span>
+                    [{ "class": "true", "condition": "isAncestorOf(p)"} ]
+                </span>
+            </div>
+        </div>
+        <div class="sub-demo-2-true should-true" data-lsz-conditional-class='[{ "class": "true", "condition": "isAncestorOf(p)" }]'>
+            <p>
+                [{ "class": "true", "condition": "isAncestorOf(p)"} ]
+            </p>
+        </div>
+        <hr/>
+        <div class="sub-demo-3-true should-true" data-lsz-conditional-class='[{ "class": "true", "condition": "true()"} ]'>
+            [{ "class": "true", "condition": "true()"} ]
+        </div>
+        <hr/>
+        <div class="sub-demo-4-true should-false" data-lsz-conditional-class='[{ "class": "true", "condition": "false()"} ]'>
+            [{ "class": "true", "condition": "false()"} ]css-scroll
+        </div>
+        <hr/>
+        <div class="sub-demo-5-true should-true" data-lsz-conditional-class='[{ "class": "true", "condition": "true() or false()"} ]'>
+            [{ "class": "true", "condition": "true() or false()"} ]
+        </div>
+        <hr/>
+        <div class="sub-demo-6-true should-true" data-lsz-conditional-class='[{ "class": "true", "condition": "( false() or true() )"} ]'>
+            [{ "class": "true", "condition": "( false() or true() )"} ]
+        </div>
+        <div class="sub-demo-7-true should-true" data-lsz-conditional-class='[{ "class": "true", "condition": "isParentOf(p) or false()"} ]'>
+            <p>
+                [{ "class": "true", "condition": "isParentOf(p)"} ]
+            </p>
+        </div>
+        <div class="sub-demo-8-true should-true" data-lsz-conditional-class='[{ "class": "true", "condition": "isParentOf(p) and isParentOf(span)"} ]'>
+            <p>
+                [{ "class": "true", "condition": "isParentOf(p)"} ]
+            </p>
+            <span>Span</span>
+        </div>
+        <div class="sub-demo-9-true should-true" data-lsz-conditional-class='[{ "class": "true", "condition": "not ( false() )"} ]'>
+
+            [{ "class": "true", "condition": "not ( false() )"} ]
+        </div>
+        <div class="sub-demo-10-false should-false" data-lsz-conditional-class='[{ "class": "true", "condition": "not ( true() )"} ]'>
+
+            [{ "class": "true", "condition": "not ( true() )"} ]
+        </div>
+        <div class="sub-demo-11-false should-false" data-lsz-conditional-class='[{ "class": "true", "condition": "not ( isParentOf(p) )"} ]'>
+            <p>
+            [{ "class": "true", "condition": "not ( isParentOf(p) )"} ]
+            </p>
+        </div>
+        
+    </div>
+    <div class="demo demo-dynamic-content">
+        <div class="sub-demo-1">
+            <div data-lsz-html-content="<h1>This content was set dynamically using Lukassz111 Basic Addon</h1><span>It uses attribute data-lsz-html-content to set innerHTML of the element</span>"></div>
+            <div data-lsz-html-content="<span>Some html prefix: data-custom-attr = "{{ attr(data-custom-attr) }}" and some suffix </span>" data-custom-attr="Value of some custom attribute"></div>
+            <div data-lsz-html-content="non existing class attrib / {{ attr(class) }}"></div>
+            <div class="some-example-class" data-lsz-html-content="Class attribute of this element is: {{ attr(class) }}"></div>
+            <div data-arg-1="Arg 1" data-arg-2="Arg 2" data-lsz-html-content="<ul><li>{{ attr(data-arg-1) }}</li><li>{{ attr(data-arg-2) }}</li></ul>"></div>
+            <div data-lsz-fetch-html-content="./fragment_demo.html"></div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Lsz.Lsz.start();
+        });
+    </script>
+</body>
+</html>

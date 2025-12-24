@@ -1,0 +1,16 @@
+{
+  "name": "lsz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lsz.js",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.9.3",
+    "vite": "^7.2.7"
+  }
+}
