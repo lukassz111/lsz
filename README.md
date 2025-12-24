@@ -18,4 +18,7 @@
             <div data-lsz-fetch-html-content="./fragment_demo.html"></div>
 
 
-## Initial
+## Install on site
+```html
+<script src="https://cdn.jsdelivr.net/gh/lukassz111/lsz@master/dist/lsz.umd.js"></script>
+```
