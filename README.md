@@ -1,5 +1,6 @@
 # LSZ
-
+## Badges
+[![](https://data.jsdelivr.com/v1/package/gh/lukassz111/lsz/badge)](https://www.jsdelivr.com/package/gh/lukassz111/lsz)
 ## Usage
 
 ### data-lsz-conditional-class='[{ "class": "true", "condition": "isParentOf(p)"} ]'
